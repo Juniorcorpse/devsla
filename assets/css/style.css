@@ -1,0 +1,192 @@
+/*VALIAVES*/
+:root{
+    --header-color:#000;
+    --h1-color:#393C41;
+    --h2-color:#6E7378;
+    --btn--dark-bg:rgba(23, 26, 32, 0.8);
+    --btn--light-bg:rgba(255, 255, 255, 0.65);
+    --color-black:#000;
+    --color-light:#fff;
+}
+
+/*FONTES*/
+@font-face {
+    font-family: GothamMedium;
+    src: url(../fonts/GothamMedium.otf);
+}
+@font-face {
+    font-family: GothamBook;
+    src: url(../fonts/GothamBookRegular.otf);
+}
+
+body{
+    font-family: 'GothamMedium', Arial, Helvetica;
+    font-size: 14px;
+    margin: 0;
+}
+
+/*HEADER*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+
+}
+header ul, header li{
+    list-style: none;
+}
+header .logo{
+    width: 120px;
+    margin-left: 20px;
+}
+header .middle ul,
+header .rightside ul{
+    display: flex;
+}
+header .middle li,
+header .rightside li{
+    margin: 0 10px;
+}
+header .middle a,
+header .rightside a{
+    text-decoration: none;
+    color: var(--header-color);
+    text-transform: uppercase;
+}
+header .menu--icon{
+    width: 18px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.menu--icon div{
+    height: 3px;
+    background-color: var(--header-color);    
+}
+
+/*MAIN*/
+main{
+    background-image: url(../images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+main .info{
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main h1{
+    margin: 0;
+    font-size: 40px;
+    font-weight: normal;
+}
+main h2{
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'GothamBook', Arial, Helvetica, sans-serif;
+    color: var(--h2-color);
+}
+
+/*FOOTER*/
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 30px;
+    right: 0;        
+}
+footer .buttons--area{
+    display: flex;
+    justify-content: center;
+}
+footer .arrow--area{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    height: 30px;
+}
+footer .arrow{
+    height: 15px;
+    animation: arrow 2s infinite;
+}
+
+
+/*COLORS*/
+.color-h1{
+    color: var(--h1-color);
+}
+.color-h2{
+    color: var(--h2-color);
+}
+
+/*BOTTONS*/
+.btn{
+    display: block;
+    width: 220px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.btn--dark{
+    background-color: var(--btn--dark-bg);
+    color: var(--color-light);
+}
+.btn--light{
+    background-color: var(--btn--light-bg);
+    color: var(--color-black);
+}
+
+/*ANIMATE*/
+@keyframes arrow {
+    0%{
+        margin-top: 0px;
+    }
+    50%{
+        margin-top: 15px;
+    }
+    100%{
+        margin-top: 0px;
+    }
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1200px) {
+    header .middle{
+        display: none;
+    }
+    header .rightside li{
+        display: none;
+    }
+    header .rightside li.menu{
+        display: block;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    footer .buttons--area{
+        flex-direction: column;
+        align-items: center;        
+    }
+
+    footer .buttons--area a{
+        margin: 10px 20px;
+        width: calc(100vw - 70px);
+    }
+
+}
